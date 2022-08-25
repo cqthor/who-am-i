@@ -1,0 +1,5 @@
+__pycache__/
+*.json
+*.session
+config.py
+*.sqlite
