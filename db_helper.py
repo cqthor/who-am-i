@@ -1,4 +1,3 @@
-import json
 import sqlite3
 
 
@@ -41,9 +40,7 @@ class DBHelper:
 
     def get_tables(self):
         stmt = "SELECT name FROM sqlite_master WHERE type='table'"
-        tables = []
-        for table in self.conn.execute(stmt).fetchall():
-            tables.append(table[0])
+        tables = [table[0] for table in self.conn.execute(stmt).fetchall()]
         tables.remove("users")
         tables.remove("users_name")
         return tables
@@ -61,9 +58,7 @@ class DBHelper:
 
     def get_user_ids(self):
         stmt = "SELECT user_id FROM users"
-        ids = []
-        for user_id in self.conn.execute(stmt).fetchall():
-            ids.append(user_id[0])
+        ids = [id[0] for id in self.conn.execute(stmt).fetchall()]
         return ids
 
     def get_users(self):

@@ -8,6 +8,7 @@ def reset():
     db.del_all_users_name()
 
 
+reset()
 now = datetime.now()
 hour = now.hour
 minute = now.minute
