@@ -1,6 +1,10 @@
 from pyrogram import Client, enums
 
-from config import API_HASH, API_ID, BOT_TOKEN
+try:
+    from config import API_HASH, API_ID, BOT_TOKEN
+except:
+    print("Please rename config_sample.py to config.py and fill in the required values.")
+    exit(1)
 
 plugins = dict(root="plugins")
 bot = Client('bot', api_id=API_ID, api_hash=API_HASH,
