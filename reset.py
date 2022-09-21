@@ -1,6 +1,8 @@
-from datetime import datetime
 import time
+from datetime import datetime
+
 from db_helper import DBHelper
+
 db = DBHelper()
 
 
@@ -8,10 +10,6 @@ def reset():
     db.del_all_users_name()
 
 
-reset()
-now = datetime.now()
-hour = now.hour
-minute = now.minute
 while True:
     now = datetime.now()
     hour = now.hour
