@@ -18,7 +18,10 @@ async def inline_query(_, inline_query: InlineQuery):
             try:
                 name = db.get_users_name(user_id, title)[2]
             except:
-                name = choice(db.get_names(title))[0]
+                try:
+                    name = choice(db.get_names(title))[0]
+                except:
+                    continue
                 db.add_users_name(user_id, title, name)
             results.append(InlineQueryResultArticle(
                 id=title,
